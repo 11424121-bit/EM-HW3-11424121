@@ -12,13 +12,13 @@ $$\frac{d^2x(t)}{dt^2} + 6\frac{dx(t)}{dt} + 8x(t) = 1$$
 
 #### 步驟一：拉普拉斯轉換與代入初始條件
 將 $x(0) = 1, x'(0) = 0$ 代入公式：
-* $\mathcal{L}\left\{\frac{d^2x(t)}{dt^2}\right\} = s^2X(s) - s$
-* $\mathcal{L}\left\{6\frac{dx(t)}{dt}\right\} = 6sX(s) - 6$
-* $\mathcal{L}\{8x(t)\} = 8X(s)$
-* $\mathcal{L}\{1\} = \frac{1}{s}$
+* $L[x''(t)] = s^2X(s) - s$
+* $L[6x'(t)] = 6sX(s) - 6$
+* $L[8x(t)] = 8X(s)$
+* $L[1] = \frac{1}{s}$
 
 轉換後的方程為：
-$$\big(s^2X(s) - s\big) + \big(6sX(s) - 6\big) + 8X(s) = \frac{1}{s}$$
+$$(s^2X(s) - s) + (6sX(s) - 6) + 8X(s) = \frac{1}{s}$$
 
 #### 步驟二：移項與通分整理
 $$(s^2 + 6s + 8)X(s) - s - 6 = \frac{1}{s}$$
@@ -40,5 +40,5 @@ $$X(s) = \frac{s^2 + 6s + 1}{s(s+2)(s+4)}$$
 $$X(s) = \frac{1/8}{s} + \frac{7/4}{s+2} - \frac{7/8}{s+4}$$
 
 #### 步驟四：反拉普拉斯轉換
-$$x(t) = \frac{1}{8}\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} + \frac{7}{4}\mathcal{L}^{-1}\left\{\frac{1}{s+2}\right\} - \frac{7}{8}\mathcal{L}^{-1}\left\{\frac{1}{s+4}\right\}$$
+$$x(t) = \frac{1}{8}L^{-1}\left[\frac{1}{s}\right] + \frac{7}{4}L^{-1}\left[\frac{1}{s+2}\right] - \frac{7}{8}L^{-1}\left[\frac{1}{s+4}\right]$$
 $$x(t) = \frac{1}{8} + \frac{7}{4}e^{-2t} - \frac{7}{8}e^{-4t}$$
